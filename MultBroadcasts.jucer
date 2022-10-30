@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="m0Cu0X" name="MultBroadcasts" projectType="guiapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1" cppLanguageStandard="17">
+  <MAINGROUP id="A3udvg" name="MultBroadcasts">
+    <GROUP id="{E0DDB0AB-144D-6170-DBC7-BFE818506715}" name="Source">
+      <GROUP id="{9D9C2969-FA1B-CC8D-2C71-8EE248C82913}" name="Headers">
+        <FILE id="GnMjg5" name="TabPageTwo.h" compile="0" resource="0" file="Source/TabPageTwo.h"/>
+        <FILE id="ZibJaC" name="TabPageOne.h" compile="0" resource="0" file="Source/TabPageOne.h"/>
+        <FILE id="CaTxQZ" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      </GROUP>
+      <FILE id="qLOZZm" name="TabPageOne.cpp" compile="1" resource="0" file="Source/TabPageOne.cpp"/>
+      <FILE id="hUvet5" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="raiNyO" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="zyIp8v" name="TabPageTwo.cpp" compile="1" resource="0" file="Source/TabPageTwo.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <VS2019 targetFolder="Builds/VisualStudio2019">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="MultBroadcasts"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="MultBroadcasts"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2019>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
