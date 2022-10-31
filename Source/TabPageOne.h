@@ -2,9 +2,18 @@
 
 #include <JuceHeader.h>
 
+class myChangeTab1Listener : public juce::ChangeListener
+{
+public:
+	void     changeListenerCallback(ChangeBroadcaster* /*source*/) override;
 
 
-class TabPageOne  : public juce::Component
+};
+
+
+class TabPageOne  : public juce::Component,
+                    public myChangeTab1Listener,
+                    public ChangeBroadcaster
 {
 public:
     TabPageOne();
@@ -27,7 +36,14 @@ public:
     void resized() override;
 
     void aButtonClicked();
+    void changeListenerCallback(ChangeBroadcaster* /*source*/) override;
 
+    void hiTab2ButtonOnClick();
+
+	Label HelloLabel1;
+
+   TextButton HiTab2Button;
+   
 private:
 
     void setTheFormSize(bool canSize);
@@ -35,7 +51,7 @@ private:
     bool canSetFormSize;
     
    TextButton aButton;
-
+   ListenerList<myChangeTab1Listener::ChangeListener> myChangeTab1Listeners;
    ListenerList<Listener> listeners;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TabPageOne)
 };

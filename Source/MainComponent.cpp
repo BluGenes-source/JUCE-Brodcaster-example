@@ -9,6 +9,9 @@ MainComponent::MainComponent() : m_resize(this, nullptr) // &m_resizeLimits
 	m_resizeLimits.setSizeLimits(500, 200, 800, 400);
 	addAndMakeVisible(&m_resize);
 	addAndMakeVisible(maintab);
+
+	tab1.addChangeListener(&tab2);
+	tab2.addChangeListener(&tab1);
 	
 
 	tab1.addListener(this);
@@ -23,6 +26,8 @@ MainComponent::MainComponent() : m_resize(this, nullptr) // &m_resizeLimits
 MainComponent::~MainComponent()
 {
 	tab1.removeListener(this);
+	tab1.removeChangeListener(&tab2);
+	tab2.removeChangeListener(&tab1);
 }
 
 //==============================================================================

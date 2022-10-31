@@ -2,14 +2,24 @@
 #include "TabPageOne.h"
 
 
+
+
 TabPageOne::TabPageOne()
 {
-     
+  
     addAndMakeVisible(aButton);
     aButton.onClick = [this] {aButtonClicked(); };
     aButton.setButtonText("Show Less");
     aButton.setClickingTogglesState(true);
     canSetFormSize = false;
+
+    addAndMakeVisible(HelloLabel1);
+    HelloLabel1.setText("waiting for change message from Tab 2...", dontSendNotification);
+
+    addAndMakeVisible(HiTab2Button);
+    HiTab2Button.setButtonText("Say Hi To Tab2!");
+	HiTab2Button.onClick = [this] {hiTab2ButtonOnClick(); };
+
 
 }
 
@@ -47,6 +57,8 @@ void TabPageOne::paint (juce::Graphics& g)
 void TabPageOne::resized()
 {
     aButton.setBounds(10, 10, 250, 40);
+    HelloLabel1.setBounds((getWidth() / 2) - 150, 100, 300, 34);
+    HiTab2Button.setBounds((getWidth() / 2) - 150, 200, 300, 34);
 }
 
 void TabPageOne::aButtonClicked()
@@ -64,7 +76,26 @@ void TabPageOne::aButtonClicked()
     setTheFormSize(canSetFormSize);
 }
 
+void TabPageOne::changeListenerCallback(ChangeBroadcaster* /*source*/)
+{
+    
+    HelloLabel1.setText("Hello from Tab 2 !!!", dontSendNotification);
+    
+}
+
+
+
+void TabPageOne::hiTab2ButtonOnClick()
+{
+    sendChangeMessage();
+}
+
 void TabPageOne::setTheFormSize(bool canSize)
 {
     listeners.call([this, canSize](Listener& l) { l.setFormSize(this, canSetFormSize); });
+}
+
+void myChangeTab1Listener::changeListenerCallback(ChangeBroadcaster* /*source*/)
+{
+    DBG("clicked from tab 2");
 }
