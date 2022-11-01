@@ -9,7 +9,7 @@ TabPageOne::TabPageOne()
   
     addAndMakeVisible(aButton);
     aButton.onClick = [this] {aButtonClicked(); };
-    aButton.setButtonText("Show Less");
+    aButton.setButtonText("Show Less - Custom Listener");
     aButton.setClickingTogglesState(true);
     canSetFormSize = false;
 
@@ -66,12 +66,12 @@ void TabPageOne::aButtonClicked()
     if (aButton.getToggleState())
     {
         canSetFormSize = true;
-        aButton.setButtonText("Show More");
+        aButton.setButtonText("Show More - Custom Listener");
     }
     else
     {
         canSetFormSize = false;
-        aButton.setButtonText("Show Less");
+        aButton.setButtonText("Show Less - Custom Listener");
     }
     setTheFormSize(canSetFormSize);
 }
@@ -79,7 +79,7 @@ void TabPageOne::aButtonClicked()
 void TabPageOne::changeListenerCallback(ChangeBroadcaster* /*source*/)
 {
     
-    HelloLabel1.setText("Hello from Tab 2 !!!", dontSendNotification);
+    HelloLabel1.setText("Hello from Tab 2 !!! Received ChangeMessage!", dontSendNotification);
     
 }
 

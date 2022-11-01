@@ -2,11 +2,13 @@
 
 #include <JuceHeader.h>
 
+// since there are two changeBroadcasters being used, you need a custom changeListener class to be able to separate the two,
+// one for each tab component
+
 class myChangeTab1Listener : public juce::ChangeListener
 {
 public:
 	void     changeListenerCallback(ChangeBroadcaster* /*source*/) override;
-
 
 };
 
@@ -19,6 +21,11 @@ public:
     TabPageOne();
     ~TabPageOne() override;
 
+    
+    // this is custom listener that uses custom parameters
+    // to use this, it would be exactly like using a button listener for example.
+    // all you do is add className :: Listener to what ever you want to have use it.  In this case, it is
+    // TabPageOne :: Listener..
     class Listener
     {
     public:
