@@ -97,5 +97,5 @@ void TabPageOne::setTheFormSize(bool canSize)
 
 void myChangeTab1Listener::changeListenerCallback(ChangeBroadcaster* /*source*/)
 {
-    DBG("clicked from tab 2");
+   // required but never called..
 }

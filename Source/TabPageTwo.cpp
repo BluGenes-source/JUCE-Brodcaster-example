@@ -55,8 +55,7 @@ void TabPageTwo::resized()
 void TabPageTwo::changeListenerCallback(ChangeBroadcaster* /*source*/)
 {
     HelloLabel2.setText("Hello from Tab 1 !!", dontSendNotification);
-    
-    DBG("Tab 2 Call Back");
+      
 }
 
 void TabPageTwo::hiTab1ButtonOnClick()
