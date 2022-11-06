@@ -63,7 +63,7 @@ void TabPageTwo::hiTab1ButtonOnClick()
     sendChangeMessage();
 }
 
-void myChangeTab2Listener::changeListenerCallback(ChangeBroadcaster* /*source*/)
+void myChangeTab2Listener::changeListenerCallback(ChangeBroadcaster* /*source*/) // this is required, but never called.
 {
     DBG("clicked called from tab 1");  // never called
 }

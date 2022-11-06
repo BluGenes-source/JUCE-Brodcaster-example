@@ -90,6 +90,8 @@ void TabPageOne::hiTab2ButtonOnClick()
     sendChangeMessage();
 }
 
+
+
 void TabPageOne::setTheFormSize(bool canSize)
 {
     listeners.call([this, canSize](Listener& l) { l.setFormSize(this, canSetFormSize); });

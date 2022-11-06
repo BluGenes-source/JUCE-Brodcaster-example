@@ -5,6 +5,13 @@
 #include "TabPageTwo.h"
 
 
+class myDialog : public DialogWindow
+{
+
+};
+
+
+
 struct MainTab : public TabbedComponent
     
 {
@@ -36,7 +43,7 @@ public:
 
     bool shouldSize;
     bool shouldPass;  // allows resizing after the button click to set form size
-
+    
 
 private:
     //==============================================================================

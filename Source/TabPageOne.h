@@ -46,10 +46,13 @@ public:
     void changeListenerCallback(ChangeBroadcaster* /*source*/) override;
 
     void hiTab2ButtonOnClick();
+    void aboutButtonOnClick();
 
 	Label HelloLabel1;
 
    TextButton HiTab2Button;
+   
+  
    
 private:
 
